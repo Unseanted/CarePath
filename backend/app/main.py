@@ -20,6 +20,10 @@ from app import __version__
 logging.basicConfig(level=logging.INFO if settings.DEBUG else logging.WARNING)
 logger = logging.getLogger("carepath")
 
+logger.warning(
+    "CORS allowed origins: %s",
+    settings.cors_origins_list,
+)
 
 @asynccontextmanager
 async def lifespan(app: FastAPI):
