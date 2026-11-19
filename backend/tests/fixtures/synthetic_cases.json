@@ -1,0 +1,125 @@
+[
+  {
+    "id": "case-edu-01",
+    "description": "Young adult, no risk signals, general pathway",
+    "pathway": "general_reproductive_health",
+    "answers": {
+      "age_band": "25_34",
+      "trying_to_conceive": "no",
+      "known_condition": "none",
+      "lifestyle_smoking": "no"
+    },
+    "expected_triage": "education",
+    "expected_red_flag": false
+  },
+  {
+    "id": "case-edu-02",
+    "description": "Under 25, general, minimal history",
+    "pathway": "general_reproductive_health",
+    "answers": {
+      "age_band": "under_25",
+      "trying_to_conceive": "no",
+      "known_condition": "none"
+    },
+    "expected_triage": "education",
+    "expected_red_flag": false
+  },
+  {
+    "id": "case-urgent-01",
+    "description": "Severe testicular pain – must escalate",
+    "pathway": "symptoms_or_concern",
+    "answers": {
+      "age_band": "25_34",
+      "trying_to_conceive": "prefer_not",
+      "severe_pain": true,
+      "sudden_swelling": false,
+      "fever_with_pain": false
+    },
+    "expected_triage": "urgent",
+    "expected_red_flag": true
+  },
+  {
+    "id": "case-urgent-02",
+    "description": "Fever with scrotal pain",
+    "pathway": "symptoms_or_concern",
+    "answers": {
+      "age_band": "25_34",
+      "fever_with_pain": true
+    },
+    "expected_triage": "urgent",
+    "expected_red_flag": true
+  },
+  {
+    "id": "case-urgent-03",
+    "description": "Sudden swelling",
+    "pathway": "symptoms_or_concern",
+    "answers": {
+      "age_band": "35_44",
+      "sudden_swelling": true
+    },
+    "expected_triage": "urgent",
+    "expected_red_flag": true
+  },
+  {
+    "id": "case-specialist-01",
+    "description": "Older age + abnormal prior test + long trying duration",
+    "pathway": "fertility_concerns",
+    "answers": {
+      "age_band": "45_plus",
+      "trying_to_conceive": "yes",
+      "duration_trying": "gt_12m",
+      "prior_semen_test": "abnormal"
+    },
+    "expected_triage": "specialist",
+    "expected_red_flag": false
+  },
+  {
+    "id": "case-specialist-02",
+    "description": "Multiple risk signals on general pathway",
+    "pathway": "general_reproductive_health",
+    "answers": {
+      "age_band": "45_plus",
+      "trying_to_conceive": "yes",
+      "known_condition": ["varicocele", "prior_infection_or_injury"],
+      "lifestyle_smoking": "yes"
+    },
+    "expected_triage": "specialist",
+    "expected_red_flag": false
+  },
+  {
+    "id": "case-primary-01",
+    "description": "Moderate signal on fertility pathway",
+    "pathway": "fertility_concerns",
+    "answers": {
+      "age_band": "35_44",
+      "trying_to_conceive": "yes",
+      "duration_trying": "6_12m",
+      "prior_semen_test": "no"
+    },
+    "expected_triage": "primary_care",
+    "expected_red_flag": false
+  },
+  {
+    "id": "case-primary-02",
+    "description": "Find professional pathway defaults toward primary care",
+    "pathway": "find_professional",
+    "answers": {
+      "age_band": "25_34"
+    },
+    "expected_triage": "primary_care",
+    "expected_red_flag": false
+  },
+  {
+    "id": "case-primary-03",
+    "description": "Single age signal on general pathway",
+    "pathway": "general_reproductive_health",
+    "answers": {
+      "age_band": "35_44",
+      "trying_to_conceive": "no",
+      "known_condition": "none",
+      "lifestyle_smoking": "no"
+    },
+    "expected_triage": "primary_care",
+    "expected_red_flag": false
+  }
+]

@@ -1,0 +1,41 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --charcoal: #121212;
+  --accent: #f5c518;
+  --accent-dim: #c9a012;
+}
+
+html,
+body {
+  height: 100%;
+  background: var(--charcoal);
+  color: #f2f2f2;
+}
+
+/* Custom scrollbar */
+::-webkit-scrollbar {
+  width: 6px;
+}
+::-webkit-scrollbar-track {
+  background: #1a1a1a;
+}
+::-webkit-scrollbar-thumb {
+  background: #3a3a3a;
+  border-radius: 3px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: var(--accent-dim);
+}
+
+.chat-scroll {
+  scroll-behavior: smooth;
+}
+
+/* Message bubble entrance helper class (GSAP drives real motion) */
+.msg-enter {
+  opacity: 0;
+  transform: translateY(12px);
+}
